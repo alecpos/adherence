@@ -9,12 +9,12 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 setup(
     name="adherence",
     version="0.1.0",
-    author="Your Name",
-    author_email="your.email@example.com",
+    author="Alec Posner",
+    author_email="alec.posner@gmail.com",
     description="A Python tool for analyzing and improving code quality",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/adherence",
+    url="https://github.com/alecpos/adherence",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     classifiers=[

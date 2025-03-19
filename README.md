@@ -18,7 +18,7 @@ A Python tool for analyzing and improving code quality, with a focus on type hin
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/adherence.git
+git clone https://github.com/alecpos/adherence.git
 cd adherence
 
 # Create and activate virtual environment
