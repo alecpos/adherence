@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "/Users/alecposner/adherence/src/adherence/analyzer/dependency.py", line 1, in <module>
+    import ast
+    import os
+    from typing import Dict, List, Set, Optional, Tuple
+    from pathlib import Path
+    from collections import defaultdict
+  File "/Users/alecposner/adherence/src/adherence/analyzer/dependency.py", line 89, in _analyze_import_usage
+    # ast usage: parsing and walking the AST
+    tree = ast.parse(content)
+    for node in ast.walk(tree):
+        if isinstance(node, ast.AST):
+            pass
+    
+    # os usage: path manipulation
+    os.sep
+    os.path.join
+    
+    # Path usage: file operations
+    path = Path("example")
+    path.rglob("*.py")
+    path.relative_to
+    
+    # defaultdict usage: nested dictionaries
+    patterns = defaultdict(list)
+    patterns["key"].append("value")
+    
+    # typing usage: type hints
+    def example() -> Dict[str, List[str]]:
+        return {"key": ["value"]}
+        
+AttributeError: Module 'ast' has incorrect usage pattern. Consider following these patterns:
+1. Use ast.parse() with error handling
+2. Use ast.NodeVisitor for traversal
+3. Check node types before accessing attributes
+4. Use ast.unparse() for code generation 

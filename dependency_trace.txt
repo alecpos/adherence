@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/Users/alecposner/adherence/src/adherence/__main__.py", line 45, in analyze_codebase
+    result = engine.analyze_codebase(directory)
+  File "/Users/alecposner/adherence/src/adherence/suggestions/engine.py", line 20, in analyze_codebase
+    dependency_graph = self.dependency_analyzer.analyze_directory(directory)
+  File "/Users/alecposner/adherence/src/adherence/analyzer/dependency.py", line 21, in analyze_directory
+    for file_path in directory_path.rglob("*.py"):
+  File "/opt/homebrew/Cellar/python@3.11/3.11.11/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py", line 1177, in rglob
+    yield from self.glob(pattern)
+  File "/Users/alecposner/adherence/src/adherence/analyzer/dependency.py", line 35, in _collect_best_practices
+    with open(file_path, 'r', encoding='utf-8') as f:
+  File "/Users/alecposner/adherence/src/adherence/analyzer/dependency.py", line 89, in _analyze_import_usage
+    visitor = ImportUsageVisitor()
+  File "/Users/alecposner/adherence/src/adherence/analyzer/dependency.py", line 93, in visit_Call
+    if isinstance(node.func, ast.Name) and node.func.id.startswith(import_name):
+  File "/Users/alecposner/adherence/src/adherence/analyzer/dependency.py", line 98, in visit_With
+    if any(isinstance(n, ast.Name) and n.id.startswith(import_name) for n in node.items):
+  File "/Users/alecposner/adherence/src/adherence/analyzer/dependency.py", line 103, in visit_Try
+    if any(isinstance(h.type, ast.Name) and h.type.id.startswith(import_name) for h in node.handlers):
+AttributeError: 'NoneType' object has no attribute 'id' 

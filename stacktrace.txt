@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "example.py", line 10, in <module>
+    result = divide_numbers(10, 0)
+  File "example.py", line 5, in divide_numbers
+    return a / b
+ZeroDivisionError: division by zero 
